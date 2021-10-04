@@ -1,5 +1,5 @@
 [package]
-name = "MidiMaker"
+name = "midi_maker"
 version = "0.1.0"
 authors = ["victormasson <victor.massonv@gmail.com>"]
 edition = "2018"

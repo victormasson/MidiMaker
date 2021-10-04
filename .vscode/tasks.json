@@ -12,16 +12,16 @@
             "group": "build",
             "label": "Rust: cargo build debug",
         },
-        // {
-        //     "type": "shell",
-        //     "command": "cargo",
-        //     "args": [
-        //         "build",
-        //         "--release"
-        //     ],
-        //     "group": "build",
-        //     "label": "Rust: cargo build release",
-        //     "problemMatcher": [],
-        // }
+        {
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build",
+                "--release"
+            ],
+            "group": "build",
+            "label": "Rust: cargo build release",
+            "problemMatcher": [],
+        }
     ]
 }

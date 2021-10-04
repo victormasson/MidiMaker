@@ -21,7 +21,7 @@ impl Header {
     pub fn to_byte(&self) -> Vec<u8> {
         let mut bytes: Vec<u8> = vec![];
 
-        bytes.extend_from_slice(self.chunk_type.as_bytes());
+        bytes.extend_from_slice(&self.chunk_type.as_bytes());
         bytes.extend_from_slice(&self.length.to_be_bytes());
         bytes.extend_from_slice(&self.format.to_be_bytes());
         bytes.extend_from_slice(&self.nb_tracks.to_be_bytes());
