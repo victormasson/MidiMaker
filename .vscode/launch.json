@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/target/debug/MidiMaker",
+            "program": "${workspaceFolder}/target/debug/midi_maker",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Rust: cargo build debug"
