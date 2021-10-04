@@ -1,4 +1,8 @@
-use super::{header::Header, track::Track};
+use super::{
+    header::Header,
+    music::{dynamics::Dynamics, note::Note},
+    track::Track,
+};
 
 #[derive(Debug)]
 pub struct Midi {
@@ -20,12 +24,12 @@ impl Midi {
         midi
     }
 
-    pub fn note_on(&mut self, track: u16, delta_time: u32, note: u8, velocity: u8) {
-        self.tracks[track as usize].note_on(delta_time, note, velocity)
+    pub fn note_on(&mut self, track: u16, delta_time: u32, note: Note, velocity: Dynamics) {
+        self.tracks[track as usize].note_on(delta_time, note.get_value(), velocity.get_value())
     }
 
-    pub fn note_off(&mut self, track: u16, delta_time: u32, note: u8, velocity: u8) {
-        self.tracks[track as usize].note_off(delta_time, note, velocity)
+    pub fn note_off(&mut self, track: u16, delta_time: u32, note: Note) {
+        self.tracks[track as usize].note_off(delta_time, note.get_value())
     }
 
     pub fn to_bytes(&self) -> Vec<u8> {

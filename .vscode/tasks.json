@@ -5,12 +5,12 @@
     "tasks": [
         {
             "type": "cargo",
-            "subcommand": "build",
+            "command": "build",
             "problemMatcher": [
                 "$rustc"
             ],
             "group": "build",
-            "label": "Rust: cargo build debug",
+            "label": "Rust: cargo build debug"
         },
         {
             "type": "shell",
@@ -21,7 +21,16 @@
             ],
             "group": "build",
             "label": "Rust: cargo build release",
-            "problemMatcher": [],
+            "problemMatcher": []
+        },
+        {
+            "type": "cargo",
+            "command": "build",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build",
+            "label": "rust: cargo build"
         }
     ]
 }

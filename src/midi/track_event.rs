@@ -1,4 +1,4 @@
-use crate::midi_format::tool;
+use crate::midi::tool;
 
 #[derive(Debug, Clone)]
 pub struct TrackEvent {
