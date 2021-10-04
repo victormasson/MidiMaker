@@ -25,13 +25,8 @@ impl Track {
         ));
     }
 
-    pub fn note_off(&mut self, delta_time: u32, note: u8, velocity: u8) {
-        self.add_event(TrackEvent::note_off(
-            delta_time,
-            self.channel,
-            note,
-            velocity,
-        ));
+    pub fn note_off(&mut self, delta_time: u32, note: u8) {
+        self.add_event(TrackEvent::note_off(delta_time, self.channel, note, 0));
     }
 
     fn add_event(&mut self, event: TrackEvent) {
@@ -61,7 +56,7 @@ impl Track {
 
 #[cfg(test)]
 mod test {
-    use crate::midi_format::{track::Track, track_event::TrackEvent};
+    use crate::midi::{track::Track, track_event::TrackEvent};
 
     #[test]
     fn track_test() {
