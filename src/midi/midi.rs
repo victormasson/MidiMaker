@@ -1,6 +1,6 @@
 use super::{
     header::Header,
-    music::{dynamics::Dynamics, note::Note},
+    music::{dynamics::Dynamics, note::Note, note_duration::NoteDuration},
     track::Track,
 };
 
@@ -22,6 +22,11 @@ impl Midi {
         });
 
         midi
+    }
+
+    pub fn write_note(&mut self, track: u8, tempo: u8, note: Note, delta_time: NoteDuration) {
+        self.note_on(track.into(), 0, note, Dynamics::mf);
+        self.note_off(track.into(), delta_time.get_value(tempo) as u32, note);
     }
 
     pub fn note_on(&mut self, track: u16, delta_time: u32, note: Note, velocity: Dynamics) {
