@@ -35,7 +35,7 @@ impl TrackEvent {
     pub fn to_bytes(&self) -> Vec<u8> {
         let mut bytes = vec![];
 
-        bytes.extend_from_slice(&tool::to_variable_length_quantity(&self.delta_time));
+        bytes.extend_from_slice(&tool::to_variable_length_quantity(self.delta_time));
         bytes.extend_from_slice(self.data.as_slice());
 
         bytes
